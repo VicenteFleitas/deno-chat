@@ -1,4 +1,6 @@
-import { Application, Router } from "https://deno.land/x/oak@v9.0.0/mod.ts"; //  oak@v7.1.0
+// oak@v9.0.0 this version implements fetchEventHandler
+import { Application, Router } from "https://deno.land/x/oak@v9.0.0/mod.ts"; 
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 const messages = [];
 
@@ -17,6 +19,7 @@ router
 	});
 
 const app = new Application();
+app.use(oakCors());
 app.use(router.routes());
 app.use(router.allowedMethods());
 
