@@ -6,4 +6,4 @@ app.use(ctx => {
 	ctx.response.body = "Hello world!, again.";
 })
 
-addEventListener("fetch", app.fetchEvnetHandler());
+addEventListener("fetch", app.fetchEventHandler());
